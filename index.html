@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="theme-color" content="#5ca4db">
+
+    <link rel="stylesheet" href="style.css">
+
+    <title>TweetYo!</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <ul class="navbar-menu">
+                <li class="active">
+                    <a href="index.html"><i class="fas fa-home"></i></a>
+                </li>
+                <li>
+                    <a href="addfriend.html"><i class="fas fa-user-plus"></i></a>
+                    <span class="counted">2</span>
+                </li>
+                <li>
+                    <a href="message.html"><i class="fas fa-comments"></i></a>
+                    <span class="counted">99+</span>
+                </li>
+                <li>
+                    <a href="notification.html"><i class="fas fa-bell"></i></a>
+                    <span class="counted">19</span>
+                </li>
+                <li>
+                    <a href="menu.html"><i class="fas fa-bars"></i></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-post">
+        <div class="container">
+            <div class="post-form">
+                <span><a href=""><i class="fas fa-user"></i></a></span>
+
+                <label for="timeline" class="timeline"></label>
+                <input type="text" name="timeline" id="timeline" placeholder="Apa yang Anda pikirkan?">
+
+                <label for="photo"><i class="fas fa-camera"></i></label>
+                <input type="file" name="photo" id="photo">
+            </div>
+            <hr>
+        </div>
+    </div>
+
+    <!-- posts -->
+   <div class="container">
+        <div class="posts-section">
+            <div class="post-header">
+                <img src="img/default.png" alt="">
+                <div class="post-by">
+                    <h1>Ahmad Shaleh</h1>
+                    <a href="">Indonesia, Jakarta.</a>
+                    <h4>2 minutes ago.</h4>
+                </div>
+                <span><i class="fas fa-ellipsis-h"></i></span>
+            </div>
+
+            <div class="post-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum consectetur animi voluptates similique recusandae? Aperiam vitae deserunt cupiditate ea nostrum modi reprehenderit assumenda id, eligendi reiciendis asperiores mollitia voluptatibus tempora!
+                Adipisci amet pariatur <br><br> numquam expedita rem ipsam velit quasi maiores natus, nam optio quibusdam itaque ipsa nulla autem officia dolorum voluptatem quaerat nobis. Nobis sint consequatur impedit molestias pariatur tempore.
+                Cupiditate ex voluptatem, non commodi ducimus repudiandae doloremque. Exercitationem aspernatur molestias iure mollitia quia, id cupiditate minima harum hic ullam dolores quae at dicta incidunt autem, similique ipsam obcaecati nesciunt.
+            </div>
+
+            <div class="post-footer">
+                <button type="button" onclick="like()" class="btn"><i id="btn-love" class="far fa-heart"></i> <span id="like-count">99</span></button>
+                <button class="btn"><i class="far fa-comment-alt"></i> 12</button>
+                <button class="btn"><i class="far fa-share-square"></i> 4</button>
+            </div>
+        </div>
+
+        <div class="posts-section">
+            <div class="post-header">
+                <img src="img/default.png" alt="">
+                <div class="post-by">
+                    <h1>Ahmad Irsyad H.</h1>
+                    <a href="">Indonesia, Sulawesi Selatan.</a>
+                    <h4>2 minutes ago.</h4>
+                </div>
+                <span><i class="fas fa-ellipsis-h"></i></span>
+            </div>
+
+            <div class="post-body">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam, sit!
+            </div>
+
+            <div class="post-footer">
+                <button type="button" onclick="like()" class="btn"><i id="btn-love" class="far fa-heart"></i> <span id="like-count">2</span></button>
+                <button class="btn"><i class="far fa-comment-alt"></i> 2</button>
+                <button class="btn"><i class="far fa-share-square"></i> </button>
+            </div>
+        </div>
+   </div>
+
+    <script src="https://kit.fontawesome.com/547ff6aca9.js" crossorigin="anonymous"></script>
+    <script>
+        function like(e) {
+            var btnLove = document.getElementById('btn-love');
+            var likeCount = document.querySelector('span#like-count')
+            var like = parseInt(likeCount.innerText)
+
+            if(btnLove.classList.toggle('fas')) {
+                likeCount.innerText = like+1
+            } else {
+                likeCount.innerText = like-1
+            }
+        }
+    </script>
+</body>
+</html>
