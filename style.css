@@ -102,7 +102,16 @@ hr {
     justify-content: center;
 }
 
-.main-post span a i,
+.main-post span.user,
+.main-post #photo {
+  flex: 1;
+}
+
+.main-post #timeline {
+  flex: 8;
+}
+
+.main-post span.user a i,
 .main-post label i {
     font-size: 1.5em;
     padding: 10px;
@@ -117,10 +126,9 @@ hr {
     border: none;
     height: 25px;
     padding: 5px;
-    flex: 2;
     font-family: 'Poppins',
     sans-serif;
-    font-size: 2.5vh;
+    font-size: 12px;
 }
 
 .main-post input[type=text]:focus {
@@ -182,6 +190,7 @@ hr {
     sans-serif;
     line-height: 1em;
     padding: 15px 10px;
+    font-size: .5em;
 }
 
 .posts-section .post-footer {
@@ -206,5 +215,15 @@ hr {
 
     .container .posts-section {
         margin: 0 20px 20px 15px;
+    }
+    
+    .navbar {
+      bottom: 0;
+      position: fixed;
+      z-index: 10;
+    }
+    
+    .posts-section .post-body {
+      font-size: 15px;
     }
 }

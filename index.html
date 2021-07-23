@@ -40,7 +40,7 @@
     <div class="main-post">
         <div class="container">
             <div class="post-form">
-                <span><a href=""><i class="fas fa-user"></i></a></span>
+                <span class="user"><a href=""><i class="fas fa-user"></i></a></span>
 
                 <label for="timeline" class="timeline"></label>
                 <input type="text" name="timeline" id="timeline" placeholder="Apa yang Anda pikirkan?">
@@ -66,13 +66,11 @@
             </div>
 
             <div class="post-body">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum consectetur animi voluptates similique recusandae? Aperiam vitae deserunt cupiditate ea nostrum modi reprehenderit assumenda id, eligendi reiciendis asperiores mollitia voluptatibus tempora!
-                Adipisci amet pariatur <br><br> numquam expedita rem ipsam velit quasi maiores natus, nam optio quibusdam itaque ipsa nulla autem officia dolorum voluptatem quaerat nobis. Nobis sint consequatur impedit molestias pariatur tempore.
-                Cupiditate ex voluptatem, non commodi ducimus repudiandae doloremque. Exercitationem aspernatur molestias iure mollitia quia, id cupiditate minima harum hic ullam dolores quae at dicta incidunt autem, similique ipsam obcaecati nesciunt.
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro accusantium necessitatibus sint quidem, beatae, dolorem.
             </div>
 
             <div class="post-footer">
-                <button type="button" onclick="like()" class="btn"><i id="btn-love" class="far fa-heart"></i> <span id="like-count">99</span></button>
+                <button type="button" class="btn btn-like"><i id="btn-love" class="far fa-heart"></i> <span id="like-count">99</span></button>
                 <button class="btn"><i class="far fa-comment-alt"></i> 12</button>
                 <button class="btn"><i class="far fa-share-square"></i> 4</button>
             </div>
@@ -94,7 +92,7 @@
             </div>
 
             <div class="post-footer">
-                <button type="button" onclick="like()" class="btn"><i id="btn-love" class="far fa-heart"></i> <span id="like-count">2</span></button>
+                <button type="button" class="btn btn-like"><i id="btn-love" class="far fa-heart"></i> <span id="like-count">2</span></button>
                 <button class="btn"><i class="far fa-comment-alt"></i> 2</button>
                 <button class="btn"><i class="far fa-share-square"></i> </button>
             </div>
@@ -103,17 +101,25 @@
 
     <script src="https://kit.fontawesome.com/547ff6aca9.js" crossorigin="anonymous"></script>
     <script>
-        function like(e) {
-            var btnLove = document.getElementById('btn-love');
-            var likeCount = document.querySelector('span#like-count')
-            var like = parseInt(likeCount.innerText)
+        
+        let button = document.querySelectorAll('.btn-like')
 
-            if(btnLove.classList.toggle('fas')) {
-                likeCount.innerText = like+1
+        button.forEach((btn, index) => {
+          btn.addEventListener('click', (e) => {
+            
+            let icon = e.target.firstChild
+            let elCount = e.target.lastChild
+            let count = parseInt(elCount.innerText)
+            
+            if(icon.classList.toggle('fas')) {
+              console.log(elCount.innerText = count + 1)
             } else {
-                likeCount.innerText = like-1
+              console.log(elCount.innerText = count - 1)
             }
-        }
+            
+          })
+        })
+        
     </script>
 </body>
 </html>
